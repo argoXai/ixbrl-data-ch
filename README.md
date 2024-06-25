@@ -1,10 +1,10 @@
 # UK Data Pull Pipeline
-This Jupyter notebook is designed to retrieve XHTML data from Companies House UK, process and analyze company data from CSV files, and interact with a database to update company profiles and XHTML tables in AWS. It also includes error logging and the ability to find the latest uploaded item in a DynamoDB table.
+This Jupyter notebook is designed to retrieve XHTML data from Companies House UK.
 
-## Table of Contents
-1. Setup
-2. Data Loading
-3. Data Filtering and Splitting
-4. Processing Company IDs
-5. Error Logging
-6. Finding Latest Uploaded Item
+The main CSV file is very large and therefore has been split into 7 parts to be processed separately.
+
+The companies have been filtered with the aim to exclude those classified as micro entities.
+
+The CSV data column number 20: `Accounts.AccountCategory` has been used to filter out the non-relevant entries.
+
+XHTML data of companies' filings is processed and downloaded from the Companies House API, and interacts with a database to update company profiles and XHTML tables in AWS. It also includes error logging and the ability to find the latest uploaded item in a DynamoDB table.
